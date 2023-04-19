@@ -54,7 +54,7 @@ def main(argv: list = sys.argv[1:]):
     )
     parser.add_argument(
         "-openai",
-        "--OPEN-API-KEY",
+        "--OPENAI-API-KEY",
         type=str,
         default=os.getenv("OPENAI_API_KEY", ""),
         help="The openai's api key.",
