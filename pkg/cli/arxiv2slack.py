@@ -77,7 +77,7 @@ def main(argv: list = sys.argv[1:]):
         "-Q",
         "--query",
         type=str,
-        default=os.getenv("ARXIV_QUERY", "abs:GPT+AND+cat:cs.AI"),  # Default: Abstract に "GPT" という文字を含む、AI関連の論文。
+        default=os.getenv("ARXIV_QUERY", "abs:GPT AND cat:cs.AI"),  # Default: Abstract に "GPT" という文字を含む、AI関連の論文。
         help="The search query of Arxiv. (See 'https://info.arxiv.org/help/api/user-manual.html#query_details'.)",
     )
     parser.add_argument("-N", "--num", type=int, default=3, help="How many papers to post.")

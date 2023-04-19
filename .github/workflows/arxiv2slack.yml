@@ -36,4 +36,4 @@ jobs:
           SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
         run: |
           poetry install
-          poetry run arxiv2slack -Q abs:GPT+AND+cat:cs.AI -N 3
+          poetry run arxiv2slack -Q "abs:GPT AND cat:cs.AI" -N 3
