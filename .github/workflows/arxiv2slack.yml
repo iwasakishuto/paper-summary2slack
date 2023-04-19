@@ -1,0 +1,42 @@
+name: arxiv summary to slack
+
+on:
+  push:
+    branches: [check-github-actions]
+  schedule:
+    - cron: "0 22 * * *" # Run daily at 7 am (JST)
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.1.6]
+        platform: [ubuntu-latest]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Install dependencies (for linux)
+        run: |
+          sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up Poetry ${{ matrix.poetry-version }}
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+
+      - name: Summarize arxiv Paper
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+          SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+        run: |
+          poetry install
+          poetry run arxiv2slack -Q abs:GPT+AND+cat:cs.AI -N 3

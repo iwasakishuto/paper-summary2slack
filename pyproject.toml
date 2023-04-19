@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pkg"
+version = "0.1.0"
+description = "Summarize arxiv papers with ChatGPT and post it to Slack."
+authors = ["iwasakishuto <cabernet.rock@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+slack-sdk = "^3.21.2"
+arxiv = "^1.4.5"
+openai = "^0.27.4"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+
+[tool.poetry.scripts]
+arxiv2slack = "pkg.cli.arxiv2slack:main"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
