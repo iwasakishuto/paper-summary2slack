@@ -1,6 +1,6 @@
 # Paper Summary to Slack
 
-<a href="https://github.com/iwasakishuto/paper-summary2slack"><img src="https://github.com/iwasakishuto/paper-summary2slack/img/architecture.png" alt="Architecture"></a>
+<a href="https://github.com/iwasakishuto/paper-summary2slack"><img src="https://github.com/iwasakishuto/paper-summary2slack/blob/main/img/architecture.png?raw=true" alt="Architecture"></a>
 <a href="https://github.com/iwasakishuto/paper-summary2slack"><img src="https://badge.fury.io/gh/iwasakishuto%2Fpaper-summary2slack.svg" alt="GitHub Version"></a>
 <a href="https://github.com/iwasakishuto/paper-summary2slack/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000" alt="License"></a>
 <br/>
