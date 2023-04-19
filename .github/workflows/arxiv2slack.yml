@@ -19,9 +19,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
-      - name: Install dependencies (for linux)
-        run: |
-          sudo apt-get clean && sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v1
         with:
