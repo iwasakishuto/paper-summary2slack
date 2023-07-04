@@ -3,8 +3,9 @@ name: arxiv summary to slack
 on:
   push:
     branches: [check-github-actions]
-  schedule:
-    - cron: "0 22 * * *" # Run daily at 7 am (JST)
+  # TODO: You exceeded your current quota, please check your plan and billing details.
+  # schedule:
+  #   - cron: "0 22 * * *" # Run daily at 7 am (JST)
   workflow_dispatch:
 
 jobs:
